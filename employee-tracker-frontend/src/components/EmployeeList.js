@@ -1,7 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import EmployeeService from "../service/EmployeeService";
 
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
+
+
+
+
+useEffect(() => {
+EmployeeService.getEmmployees().then((res) => {
+    setEmployees(res.data)
+})
+}, [employees])
 
   return (
     <div className=" row">
