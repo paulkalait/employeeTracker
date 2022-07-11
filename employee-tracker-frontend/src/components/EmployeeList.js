@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import EmployeeService from "../service/EmployeeService";
+import { Link } from "react-router-dom";
 
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
+
 
 
 
@@ -14,7 +16,12 @@ EmployeeService.getEmmployees().then((res) => {
 }, [employees])
 
   return (
-    <div className=" row">
+    <div className="row">
+    <div>
+    <Link to="/add-employees">
+     Add Employee
+    </Link>
+    </div>
       <h2 className="text-center"> Employees</h2>
       <div className="row d-flex justify-content-center">
         <table className="table table-striped table-bordered">
