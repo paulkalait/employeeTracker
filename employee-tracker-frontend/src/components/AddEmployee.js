@@ -8,13 +8,13 @@ const AddEmployee = () => {
     // const [salary, setSalary ] = useState('')
     // const [address, setAddress ] = useState('')
 
-const [formState, setFormState] = useState({firstName: '', lastName: '', companyId: '', salary: '', address: ''})
+const [formState, setFormState] = useState({firstName: '', lastName: '', companyId: null, salary: null, address: ''})
  
 
 const saveEmployee = (e) => {
     e.preventDefault()
     //create an employee object
-    let employee = { firstName: formState.firstName, lastName: formState.lastName, companyId: formState.companyId, salary: parseInt(formState.salary), address: formState.address }
+    let employee = { firstName: formState.firstName, lastName: formState.lastName, companyId: formState.companyId, salary: formState.salary, address: formState.address }
     console.log('Employee =>' + JSON.stringify(employee))
 
     //feed the employee object which has the form data into the createEmployee method to create an employee in the MySQL backend
@@ -61,7 +61,7 @@ const handleChange = (event) =>{
             <input placeholder="Salary" name="salary" className="form-control"
             value={formState.salary} onChange={handleChange}/>
             <label> address</label>
-            <input placeholder="Address" name="firstName" className="form-control"
+            <input placeholder="Address" name="address" className="form-control"
             value={formState.address} onChange={handleChange} />
             </div>
 

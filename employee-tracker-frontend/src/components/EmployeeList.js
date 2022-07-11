@@ -27,6 +27,7 @@ EmployeeService.getEmmployees().then((res) => {
         <table className="table table-striped table-bordered">
           <thead>
             <tr>
+            <th>Company ID</th>
               <th>Employee First Name</th>
               <th>Employee Last Name</th>
               <th>Employee Email</th>
@@ -39,10 +40,11 @@ EmployeeService.getEmmployees().then((res) => {
             {employees.map((employee) => (
               <tr key={employee.id}>
                 {" "}
+                <td>{employee.companyId}</td>
                 <td>{employee.firstName}</td>
                 <td>{employee.lastName}</td>
-                <td>{employee.Email}</td>
-                <td>{employee.Address}</td>
+                <td>{employee.emailId}</td>
+                <td>{employee.address}</td>
                 <td>{employee.salary}</td>
               </tr>
             ))}
