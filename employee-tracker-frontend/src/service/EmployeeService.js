@@ -12,6 +12,11 @@ class EmployeeService{
         //axios will get the and return 
         return axios.get(EMPLOYEE_API_URL)
     }
+
+    //post request
+    createEmployee(employee){
+        return axios.post(EMPLOYEE_API_URL, employee)
+    }
 }
 
 //export an object of this class
