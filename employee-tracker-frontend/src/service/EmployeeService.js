@@ -29,6 +29,11 @@ class EmployeeService{
         //example   http://localhost:3000/api/v1/employees/1 . . employee object
         return axios.put(EMPLOYEE_API_URL + '/' + employeeId, employee)
     }
+
+    //delete Emplotee
+    deleteEmployee(employeeId){
+        return axios.delete(EMPLOYEE_API_URL + '/' + employeeId)
+    }
 }
 
 //export an object of this class

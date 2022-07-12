@@ -15,6 +15,13 @@ const editEmployee = (id) => {
     window.location.assign(`/update-employees/${id}`)
 }
 
+const deleteEmployee = (id) => {
+    //rest API Call
+    EmployeeService.deleteEmployee(id).then((res) => {
+        //filter out of the employees array
+        employees.filter(employee => employee.id !== employee)
+    })
+}
   return (
     <div className="row">
     <div>
@@ -48,6 +55,7 @@ const editEmployee = (id) => {
                 <td>{employee.salary}</td>
                 <td>
                     <button onClick={() => editEmployee(employee.id)} className="btn btn-info">Update</button>
+                    <button onClick={() => deleteEmployee(employee.id)} className="btn btn-danger" style={{marginLeft: '2%'}}>Delete</button>
                 </td>
               </tr>
             ))}
