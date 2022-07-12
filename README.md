@@ -3,7 +3,7 @@
   ![node-badge](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
   ![jdk](https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=whit)
   ![springboot](https://img.shields.io/badge/Spring_Boot-F2F4F9?style=for-the-badge&logo=spring-boot)
-  ![React](ttps://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+  ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 
 
   <img src="employee-tracker-frontend/src/assets/images/employeeCoverPage.png" width="700" height="400">
