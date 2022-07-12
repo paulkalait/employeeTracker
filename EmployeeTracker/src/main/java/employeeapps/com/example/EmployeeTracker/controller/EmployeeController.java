@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Map;
 
 //allows for localhost 8080 to talk to the local host 3000
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "https://employee-tracker-sb.herokuapp.com/")
 @RestController
 @RequestMapping("/api/v1")
 public class EmployeeController {
