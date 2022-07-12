@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
 
-
-
-
-
 useEffect(() => {
 EmployeeService.getEmmployees().then((res) => {
     setEmployees(res.data)
 })
 }, [employees])
+
+const editEmployee = (id) => {
+    window.location.assign(`/update-employees/${id}`)
+}
 
   return (
     <div className="row">
@@ -33,19 +33,22 @@ EmployeeService.getEmmployees().then((res) => {
               <th>Employee Email</th>
               <th>Employee Address</th>
               <th>Salary</th>
+              <th>Actions</th>
             </tr>
           </thead>
 
           <tbody>
             {employees.map((employee) => (
               <tr key={employee.id}>
-                {" "}
                 <td>{employee.companyId}</td>
                 <td>{employee.firstName}</td>
                 <td>{employee.lastName}</td>
                 <td>{employee.emailId}</td>
                 <td>{employee.address}</td>
                 <td>{employee.salary}</td>
+                <td>
+                    <button onClick={() => editEmployee(employee.id)} className="btn btn-info">Update</button>
+                </td>
               </tr>
             ))}
           </tbody>
