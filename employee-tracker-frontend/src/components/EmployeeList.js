@@ -5,11 +5,14 @@ import { Link } from "react-router-dom";
 const EmployeeList = () => {
   const [employees, setEmployees] = useState([]);
 
+
 useEffect(() => {
 EmployeeService.getEmmployees().then((res) => {
     setEmployees(res.data)
 })
 }, [employees])
+
+
 
 const editEmployee = (id) => {
     window.location.assign(`/update-employees/${id}`)
@@ -23,7 +26,9 @@ const deleteEmployee = (id) => {
     })
 }
   return (
+   
     <div className="row">
+    
       <h2 className="text-center employee-title"> Employees</h2>
       <div className="add-employee-link">
       <Link to="/add-employees">
@@ -53,6 +58,7 @@ const deleteEmployee = (id) => {
                 <td>{employee.emailId}</td>
                 <td>{employee.address}</td>
                 <td>{employee.salary}</td>
+               
                 <td>
                     <button onClick={() => editEmployee(employee.id)} className="update-btn">Update</button>
                     <button onClick={() => deleteEmployee(employee.id)} className="delete-btn" style={{marginLeft: '2%'}}>Delete</button>
