@@ -1,8 +1,8 @@
 //js class
 import axios from 'axios';
 
-//define the rest api end point
-const EMPLOYEE_API_URL = "http://localhost:8080/api/v1/employees";
+//define the rest api end point http://localhost:8080/api/v1/employees
+const EMPLOYEE_API_URL = "https://employee-tracker-sb.herokuapp.com/employees";
 
 class EmployeeService{
 
