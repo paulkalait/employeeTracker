@@ -4,13 +4,13 @@ import { useParams } from "react-router-dom";
 
 const UpdateEmployee = () => {
 
-const [formState, setFormState] = useState({firstName: '', lastName: '', companyId: null, salary: null, address: ''})
+const [formState, setFormState] = useState({firstName: '', lastName: '', companyId: null, salary: null, address: '', emailId: ''})
  const { id } = useParams()
 
 const updateEmployee = (e) => {
     e.preventDefault()
     //create an employee object
-    let employee = { firstName: formState.firstName, lastName: formState.lastName, companyId: formState.companyId, salary: formState.salary, address: formState.address }
+    let employee = { firstName: formState.firstName, lastName: formState.lastName, companyId: formState.companyId, salary: formState.salary, address: formState.address, emailId: formState.emailId }
     console.log('Employee =>' + JSON.stringify(employee));
 
     EmployeeService.updateEmployeeById(employee, id).then((res) => {
@@ -18,7 +18,8 @@ const updateEmployee = (e) => {
     })
 }
 
-const cancel = () => {
+const cancel = (e) => {
+  e.preventDefault()
     window.location.assign('/')
 }
 
@@ -36,7 +37,7 @@ const handleChange = (event) =>{
 useEffect(() => {
     EmployeeService.getEmployeesById(id).then((res) => {
         let employee = res.data;
-        setFormState({ firstName: employee.firstName, lastName: employee.lastName, companyId: employee.companyId, address: employee.address, salary: employee.salary})
+        setFormState({ firstName: employee.firstName, lastName: employee.lastName, companyId: employee.companyId, address: employee.address, salary: employee.salary, emailId: employee.emailId})
     })
 }, [])
 
@@ -55,6 +56,9 @@ useEffect(() => {
             <label> Last Name</label>
             <input placeholder="Last Name" name="lastName" className="form-control"
             value={formState.lastName} onChange={handleChange} />
+            <label> Email</label>
+            <input placeholder="Email@gmail.com" name="emailId" className="form-control"
+            value={formState.emailId} onChange={handleChange} />
             <label> Company Id</label>
             <input placeholder="Company Id" name="companyId" className="form-control"
             value={formState.companyId} onChange={handleChange}/>
@@ -67,8 +71,8 @@ useEffect(() => {
             </div>
 
             <div className="my-3">
-            <button className="btn btn-success" onClick={updateEmployee}>Update</button>
-            <button className="btn btn-danger"  onClick={cancel} style={{marginLeft: "10px"}}>Cancel</button>
+            <button className="update-btn" onClick={updateEmployee}>Update</button>
+            <button className="cancel-btn"  onClick={cancel} style={{marginLeft: "10px"}}>Cancel</button>
             </div>
           
           </form>

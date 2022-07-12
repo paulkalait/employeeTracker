@@ -24,19 +24,19 @@ const deleteEmployee = (id) => {
 }
   return (
     <div className="row">
-    <div>
-    <Link to="/add-employees">
-     Add Employee
-    </Link>
-    </div>
-      <h2 className="text-center"> Employees</h2>
-      <div className="row d-flex justify-content-center">
+      <h2 className="text-center employee-title"> Employees</h2>
+      <div className="add-employee-link">
+      <Link to="/add-employees">
+       <button> Add Employee</button>
+      </Link>
+      </div>
+      <div className="row d-flex justify-content-center ">
         <table className="table table-striped table-bordered">
           <thead>
             <tr>
             <th>Company ID</th>
-              <th>Employee First Name</th>
-              <th>Employee Last Name</th>
+              <th>First Name</th>
+              <th>Last Name</th>
               <th>Employee Email</th>
               <th>Employee Address</th>
               <th>Salary</th>
@@ -54,8 +54,8 @@ const deleteEmployee = (id) => {
                 <td>{employee.address}</td>
                 <td>{employee.salary}</td>
                 <td>
-                    <button onClick={() => editEmployee(employee.id)} className="btn btn-info">Update</button>
-                    <button onClick={() => deleteEmployee(employee.id)} className="btn btn-danger" style={{marginLeft: '2%'}}>Delete</button>
+                    <button onClick={() => editEmployee(employee.id)} className="update-btn">Update</button>
+                    <button onClick={() => deleteEmployee(employee.id)} className="delete-btn" style={{marginLeft: '2%'}}>Delete</button>
                 </td>
               </tr>
             ))}

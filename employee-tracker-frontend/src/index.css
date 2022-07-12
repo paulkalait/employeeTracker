@@ -1,13 +1,113 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Nunito Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+input:focus{
+  text-decoration: none;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  box-shadow: none;
+
+}
+.navbar{
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+a , h2, td, th{
+  color: black;
+  font-family: 'Nunito Sans', sans-serif;
+}
+h2{
+  text-align: center;
+  font-weight: bolder;
+
+}
+h3{
+  font-weight: 700;
+}
+
+button{
+  height: 28px;
+}
+.update-btn{
+  background: rgb(100, 244, 100, .5);
+  border: 1.5px solid darkgreen;
+  color: darkgreen;
+  font-weight: 800;
+  height: 28px;
+  border-radius: 14px!important;
+ margin-right: 5px !important;
+}
+.delete-btn{
+  background: rgb(245, 16, 16,.5);
+  border: 1.5px solid darkred;
+  color: darkred;
+  font-weight: 800;
+  height: 28px;
+  border-radius: 14px!important;
+ margin-right: 5px !important;
+}
+.update-btn{
+  background: rgb(100, 244, 100, .5);
+  border: 1.5px solid darkgreen;
+  color: darkgreen;
+  font-weight: 700;
+  height: 28px;
+  border-radius: 14px!important;
+ margin-right: 5px !important;
+}
+
+.cancel-btn{
+  background: rgb(245, 16, 16,.5);
+  border: 1.5px solid darkred;
+  color: darkred;
+  font-weight: 700;
+  height: 28px;
+  border-radius: 14px!important;
+ margin-right: 5px !important;
+}
+.add-employee-link {
+  text-align: center;
+}
+.add-employee-link button{
+  border: none;
+  background-color: transparent;
+  font-weight: bolder;
+  border-radius: 14px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+.add-employee-link button:hover{
+ background-color: rgb(227, 227, 227) !important;
+ border: 1px solid rgb(148, 148, 148);
+ border-radius: 14px;
+ color: black;
+/* transition: .2s ease-in; */
+ font-weight: bolder;
+ font-size: 1.0rem;
+}
+.employee-title{
+  margin-top: 2% !important;
+}
+
+
+@media screen and (max-width: 770px) {
+ .container{
+  width: 100%;
+ }
+  header{
+    width: 100% !important;
+  }
+  nav{
+    width: 100%;
+  }
 }

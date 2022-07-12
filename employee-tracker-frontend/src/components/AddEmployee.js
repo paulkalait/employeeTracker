@@ -8,13 +8,13 @@ const AddEmployee = () => {
     // const [salary, setSalary ] = useState('')
     // const [address, setAddress ] = useState('')
 
-const [formState, setFormState] = useState({firstName: '', lastName: '', companyId: null, salary: null, address: ''})
+const [formState, setFormState] = useState({firstName: '', lastName: '', companyId: null, salary: null, address: '', emailId: ''})
  
 
 const saveEmployee = (e) => {
     e.preventDefault()
     //create an employee object
-    let employee = { firstName: formState.firstName, lastName: formState.lastName, companyId: formState.companyId, salary: formState.salary, address: formState.address }
+    let employee = { firstName: formState.firstName, lastName: formState.lastName, companyId: formState.companyId, salary: formState.salary, address: formState.address , emailId: formState.emailId}
     console.log('Employee =>' + JSON.stringify(employee))
 
     //feed the employee object which has the form data into the createEmployee method to create an employee in the MySQL backend
@@ -54,6 +54,9 @@ const handleChange = (event) =>{
             <label> Last Name</label>
             <input placeholder="Last Name" name="lastName" className="form-control"
             value={formState.lastName} onChange={handleChange} />
+            <label> Email</label>
+            <input placeholder="Email@gmail.com" name="emailId" className="form-control"
+            value={formState.emailId} onChange={handleChange} />
             <label> Company Id</label>
             <input placeholder="Company Id" name="companyId" className="form-control"
             value={formState.companyId} onChange={handleChange}/>
@@ -63,11 +66,12 @@ const handleChange = (event) =>{
             <label> address</label>
             <input placeholder="Address" name="address" className="form-control"
             value={formState.address} onChange={handleChange} />
+            
             </div>
 
             <div className="my-3">
-            <button className="btn btn-success" onClick={saveEmployee}>Add</button>
-            <button className="btn btn-danger"  onClick={cancel} style={{marginLeft: "10px"}}>Cancel</button>
+            <button className="update-btn" onClick={saveEmployee}>Add</button>
+            <button className="cancel-btn"  onClick={cancel} style={{marginLeft: "10px"}}>Cancel</button>
             </div>
           
           </form>
